@@ -11,30 +11,50 @@
 class singleDigitNumber(object):
     @staticmethod
     def check(number):
-        print('Однозначное число')
+        if len(str(number)) == 1:
+            print('Однозначное число')
+        else:
+            print('Нет')
 
 
 class twoDigitNnumber(object):
     @staticmethod
     def check(number):
-        print('Двузначное число')
+        if len(str(number)) == 2:
+            print('Двузначное число')
+        else:
+            print('Нет')
 
 
 class aLotOfNumbers(object):
     @staticmethod
     def check(number):
-        print('Число с большим количеством знаков')
+        if len(str(number)) >= 3:
+            print('Число с большим количеством знаков')
+        else:
+            print('Нет')
+
 
 
 class Number(object):
     @classmethod
     def open(cls, number):
-        if len(str(number)) == 1:
+        print("Check ls\n1. Однозначное число \n2. Двузначное число \n3. Число с большим количеством знаков")
+        menu = int(input())
+
+        if menu == 1:
             checker = singleDigitNumber
-        elif len(str(number)) == 2:
+        elif menu == 2:
             checker = twoDigitNnumber
-        elif len(str(number)) >= 3:
+        elif menu == 3:
             checker = aLotOfNumbers
+
+        #if len(str(number)) == 1:
+        #    checker = singleDigitNumber
+        #elif len(str(number)) == 2:
+        #    checker = twoDigitNnumber
+        #elif len(str(number)) >= 3:
+        #    checker = aLotOfNumbers
 
         #print(checker)
         #print(checker.check(a))
@@ -44,4 +64,4 @@ class Number(object):
         self._checker = checker
         self._number = number
 
-Number.open(10000000000000000)
+Number.open('1')
